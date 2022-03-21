@@ -43,6 +43,8 @@ architect: String
 });
 
 
+const Directory = mongoose.model('Directory', directorySchema);
+
 const directory = new Directory ({
     name: "40 East 88th Street, Apt3A",
     address: "40 East 88th Street, Apt3A",
