@@ -7,6 +7,8 @@ const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
 const Directory = require('./model/directory');
 const { redirect } = require('express/lib/response');
+mongoose.connect('mongodb+srv://admin-dimitris:testDB123@cluster0.xw0cl.mongodb.net/projectsIB');
+const app = express();
 
 
 const Schema = mongoose.Schema;
@@ -54,8 +56,7 @@ const directory = new Directory ({
     changeOrder: 55.991
 })
 
-mongoose.connect('mongodb+srv://admin-dimitris:testDB123@cluster0.xw0cl.mongodb.net/projectsIB');
-const app = express();
+
 
 
 
