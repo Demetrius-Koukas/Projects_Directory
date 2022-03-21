@@ -8,6 +8,52 @@ const methodOverride = require('method-override');
 const Directory = require('./model/directory');
 const { redirect } = require('express/lib/response');
 
+
+const Schema = mongoose.Schema;
+
+const directorySchema = new Schema({
+    name: String,
+    address: String,
+    owner: [
+         {
+            firstname: String,
+            surname: String,
+        }
+    ],
+
+    projectManager: String,
+    subcontractors: [
+        {
+        plumber: String,
+    },
+    { 
+        electrical: String,
+    },
+    {
+        mechanical: String,
+    }
+],
+
+startingDate: Date,
+endingDate: Date,
+estimate: String,
+collectedAmount: String,
+changeOrder: String,
+architect: String
+
+});
+
+
+const directory = new Directory ({
+    name: "40 East 88th Street, Apt3A",
+    address: "40 East 88th Street, Apt3A",
+    estimate:610.291,
+    startingDate:18/10/2021,
+    endingDate: 31/05/2022,
+    collectedAmount: 612.694,
+    changeOrder: 55.991
+})
+
 mongoose.connect('mongodb+srv://admin-dimitris:testDB123@cluster0.xw0cl.mongodb.net/projectsIB');
 const app = express();
 
