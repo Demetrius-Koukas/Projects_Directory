@@ -1,7 +1,6 @@
 const express = require('express');
 const ejs = require('ejs');
 const mongoose = require ('mongoose');
-
 const path = require('path');
 const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
@@ -9,8 +8,6 @@ const Directory = require('./model/directory');
 const { redirect } = require('express/lib/response');
 mongoose.connect('mongodb+srv://admin-dimitris:testDB123@cluster0.xw0cl.mongodb.net/projectsIB');
 const app = express();
-
-
 const Schema = mongoose.Schema;
 
 const directorySchema = new Schema({
@@ -156,7 +153,7 @@ if(port==null || port == ""){
     port = 3000;
 }
 
-app.listen(port, ()=>{
+app.listen(3000, ()=>{
     console.log('Server started!')
 })
 
