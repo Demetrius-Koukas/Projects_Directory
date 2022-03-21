@@ -11,6 +11,16 @@ const { redirect } = require('express/lib/response');
 mongoose.connect('mongodb+srv://admin-dimitris:testDB123@cluster0.xw0cl.mongodb.net/projectsIB');
 const app = express();
 
+const directory = new Directory ({
+    name: "40 East 88th Street, Apt3A",
+    address: "40 East 88th Street, Apt3A",
+    estimate:610.291,
+    startingDate:18/10/2021,
+    endingDate: 31/05/2022,
+    collectedAmount: 612.694,
+    changeOrder: 55.991
+})
+
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
