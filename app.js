@@ -4,8 +4,8 @@ const mongoose = require ('mongoose');
 const path = require('path');
 const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
-const Directory = require('./model/directory');
-const { redirect } = require('express/lib/response');
+// const Directory = require('./model/directory');
+
 mongoose.connect('mongodb+srv://admin-dimitris:testDB123@cluster0.xw0cl.mongodb.net/projectsIB');
 const app = express();
 const Schema = mongoose.Schema;
@@ -44,16 +44,6 @@ architect: String
 
 
 const Directory = mongoose.model('Directory', directorySchema);
-
-const directory = new Directory ({
-    name: "40 East 88th Street, Apt3A",
-    address: "40 East 88th Street, Apt3A",
-    estimate:610.291,
-    startingDate:18/10/2021,
-    endingDate: 31/05/2022,
-    collectedAmount: 612.694,
-    changeOrder: 55.991
-})
 
 
 
