@@ -4,47 +4,10 @@ const mongoose = require ('mongoose');
 const path = require('path');
 const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
-// const Directory = require('./model/directory');
+const Directory = require('./model/directory');
 
 mongoose.connect('mongodb+srv://admin-dimitris:testDB123@cluster0.xw0cl.mongodb.net/projectsIB');
 const app = express();
-const Schema = mongoose.Schema;
-
-const directorySchema = new Schema({
-    name: String,
-    address: String,
-    owner: [
-         {
-            firstname: String,
-            surname: String,
-        }
-    ],
-
-    projectManager: String,
-    subcontractors: [
-        {
-        plumber: String,
-    },
-    { 
-        electrical: String,
-    },
-    {
-        mechanical: String,
-    }
-],
-
-startingDate: Date,
-endingDate: Date,
-estimate: String,
-collectedAmount: String,
-changeOrder: String,
-architect: String
-
-});
-
-
-const Directory = mongoose.model('Directory', directorySchema);
-
 
 
 
