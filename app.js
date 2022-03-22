@@ -4,12 +4,11 @@ const mongoose = require ('mongoose');
 const path = require('path');
 const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
+const { urlencoded } = require('express');
 const Directory = require('./model/directory');
 
 mongoose.connect('mongodb+srv://admin-dimitris:testDB123@cluster0.xw0cl.mongodb.net/projectsIB');
 const app = express();
-
-
 
 
 app.engine('ejs', ejsMate);
@@ -29,7 +28,7 @@ app.get('/projects', async(req, res)=>{
 })
 
 
-/// list new projects ///
+/// ADD new projects ///
 
 app.get("/projects/new", (req, res)=>{
     res.render('projects/new');
@@ -49,7 +48,7 @@ app.post('/projects', async(req, res)=>{
         
     })
 
-    await newProject.save()
+    await newProject.save();
 
     res.redirect('projects')
 })
