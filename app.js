@@ -43,7 +43,7 @@ app.post('/projects', async(req, res)=>{
         estimate: req.body.estimate,
         collectedAmount: req.body.collectedAmount,
         changeOrder: req.body.changeOrder,
-        architect: req.body.architect,
+        owner: req.body.owner,
         startingDate: req.body.startingDate,
         endingDate: req.body.endingDate
         
@@ -82,7 +82,7 @@ app.put ('/projects/:id', async(req, res) =>{
             estimate: req.body.estimate,
             collectedAmount: req.body.collectedAmount,
             changeOrder: req.body.changeOrder,
-            architect: req.body.architect,
+            owner: req.body.owner,
             startingDate: req.body.startingDate,
             endingDate: req.body.endingDate
         

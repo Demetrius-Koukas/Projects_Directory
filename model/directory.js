@@ -4,13 +4,7 @@ const Schema = mongoose.Schema;
 const directorySchema = new Schema({
     name: String,
     address: String,
-    owner: [
-         {
-            firstname: String,
-            surname: String,
-        }
-    ],
-
+    owner: String,
     projectManager: String,
     subcontractors: [
         {
